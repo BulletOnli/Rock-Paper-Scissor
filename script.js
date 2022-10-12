@@ -19,6 +19,7 @@ startBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener('click', () => {
     alive = true
+    startBtn.disabled = false
     currentScorePlayerOne = 0
     currentScorePlayerTwo = 0
     playerOneScore.textContent = `Score: 0`
@@ -78,11 +79,13 @@ function startGame() {
         alive = false
         playerOnePick.textContent = `Winner`
         playerTwoPick.style.visibility = 'hidden'
+        startBtn.disabled = true
     }
     if (currentScorePlayerTwo == 3) {
         alive = false
         playerTwoPick.textContent = `Winner`
         playerOnePick.style.visibility = 'hidden'
+        startBtn.disabled = true
     }
     console.log(alive)
 }
